@@ -1,0 +1,56 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+        "type": "java",
+        "name": "VulkanTest",
+        "request": "launch",
+        "mainClass": "VulkanTest",
+        "projectName": "Engine_5ed9d35d"
+    },
+    {
+        "type": "java",
+        "name": "RectangleDemo",
+        "request": "launch",
+        "mainClass": "RectangleDemo",
+        "projectName": "Engine_5ed9d35d",
+        "env": {
+            "_GLFW_WAYLAND": "0",
+            "__GLX_VENDOR_LIBRARY_NAME": "nvidia",
+            "__GL_EGL_VENDOR_LIBRARY_FILENAMES": "/usr/share/glvnd/egl_vendor.d/10_nvidia.json"
+        }
+    },
+    {
+        "type": "java",
+        "name": "WaylandCheck",
+        "request": "launch",
+        "mainClass": "WaylandCheck",
+        "projectName": "Engine_5ed9d35d"
+    },
+    {
+        "type": "java",
+        "name": "GpuTest",
+        "request": "launch",
+        "mainClass": "GpuTest",
+        "projectName": "Engine_5ed9d35d"
+    },
+    {
+        "type": "java",
+        "name": "Launch LWJGL App",
+        "request": "launch",
+        "mainClass": "GpuTest",
+        "vmArgs": "-Djava.library.path=native",
+        "classPaths": [
+            "lib/lwjgl.jar",
+            "lib/lwjgl-glfw.jar",
+            "lib/lwjgl-opengl.jar"
+        ],
+        "cwd": "${workspaceFolder}",
+        "env": {
+            "_GLFW_WAYLAND": "1",
+            "__GLX_VENDOR_LIBRARY_NAME": "nvidia",
+            "__GL_EGL_VENDOR_LIBRARY_FILENAMES": "/usr/share/glvnd/egl_vendor.d/10_nvidia.json"
+        }
+    }
+]
+}
