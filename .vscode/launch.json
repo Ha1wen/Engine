@@ -3,11 +3,32 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Main",
+      "request": "launch",
+      "mainClass": "Main",
+      "projectName": "Engine_3f054cd3"
+    },
+    {
+      "type": "java",
+      "name": "SpinningRectangle",
+      "request": "launch",
+      "mainClass": "SpinningRectangle",
+      "projectName": "Engine_3f054cd3"
+    },
+    {
+      "type": "java",
+      "name": "RectangleDemo",
+      "request": "launch",
+      "mainClass": "RectangleDemo",
+      "projectName": "Engine_3f054cd3"
+    },
+    {
+      "type": "java",
       "name": "Launch LWJGL OpenGL App",
       "request": "launch",
       "mainClass": "MainClass",
       "env": {
-        "GLFW_PLATFORM": "x11",
+        "GLFW_PLATFORM": "x11"
       }
     }
   ]
