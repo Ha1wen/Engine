@@ -14,6 +14,11 @@ public class CFrame {
         this.rotation = new Vector3();
     }
 
+    public CFrame(float x, float y, float z) {
+        this.position = new Vector3(x, y, z);
+        this.rotation = new Vector3();
+    }
+
     public CFrame(Vector3 position, Vector3 rotation) {
         this.position = position;
         this.rotation = rotation;

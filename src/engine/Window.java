@@ -14,15 +14,14 @@ public class Window {
         this.width = width;
         this.height = height;
         this.title = title;
-    }
 
-    public void init() {
         if (!glfwInit())
             throw new IllegalStateException("Unable to initialize GLFW");
 
         // Set OpenGL version to 2.1 (same as before)
         glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 2);
         glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
+        //glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
         windowHandle = glfwCreateWindow(width, height, title, NULL, NULL);
         if (windowHandle == NULL)
@@ -31,10 +30,12 @@ public class Window {
         glfwMakeContextCurrent(windowHandle);
         glfwSwapInterval(1);  // Enable v-sync
         glfwShowWindow(windowHandle);
+
+        System.out.println("Is context current? " + (glfwGetCurrentContext() == windowHandle));
     }
 
     public boolean shouldClose() {
-        return glfwWindowShouldClose(windowHandle);
+        return glfwWindowShouldClose(windowHandle) || getKeyDown(GLFW_KEY_Q);
     }
 
     public void swapBuffers() {
@@ -60,5 +61,13 @@ public class Window {
 
     public int getHeight() {
         return height;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public boolean getKeyDown(int key) {
+        return glfwGetKey(windowHandle, key) == GLFW_PRESS;
     }
 }
